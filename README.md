@@ -8,7 +8,7 @@ A C# library to parse the data from https://mhw-db.com
 - Armor
 - Weapons
 
-All classes are static, so you don't need to instantiate any classes.
+All classes are static, so you don't need to instantiate anything.
 ```cs
 using MHW.Net;
 
