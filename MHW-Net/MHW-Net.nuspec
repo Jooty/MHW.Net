@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>MHW.Net</id>
+    <version>0.1</version>
+    <title>MHW-Net</title>
+    <authors>Jooty</authors>
+    <owners>Jooty</owners>
+    <licenseUrl>https://github.com/Jooty</licenseUrl>
+    <projectUrl>https://github.com/Jooty</projectUrl>
+    <iconUrl>https://vignette.wikia.nocookie.net/monsterhunter/images/d/dc/MHW-Black_Diablos_Icon.png/revision/latest?cb=20180128062821</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A C# library to parse the data from https://mhw-db.com</description>
+    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>MHW</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="11.0.3" />
+    </dependencies>
+  </metadata>
+</package>
