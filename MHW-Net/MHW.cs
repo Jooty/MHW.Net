@@ -4,18 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using System.Net;
+using System.Net.Http;
 
 namespace MHW_Net
 {
     public class MHW
     {
+        private static readonly HttpClient client = new HttpClient();
+
         public static Armor GetArmor(int id)
         {
             string request = $"https://mhw-db.com/armor/{id}";
 
-            var wc = new WebClient();
-            string dbData = wc.DownloadString(request);
+            string dbData = client.GetStringAsync(request).Result;
 
             Armor armor = JsonConvert.DeserializeObject<Armor>(dbData);
             return armor;
@@ -25,8 +26,7 @@ namespace MHW_Net
         {
             string request = $"https://mhw-db.com/armor/sets/{id}";
 
-            var wc = new WebClient();
-            string dbData = wc.DownloadString(request);
+            string dbData = client.GetStringAsync(request).Result;
 
             ArmorSet armorSet = JsonConvert.DeserializeObject<ArmorSet>(dbData);
             return armorSet;
@@ -36,8 +36,7 @@ namespace MHW_Net
         {
             string request = $"https://mhw-db.com/charms/{id}";
 
-            var wc = new WebClient();
-            string dbData = wc.DownloadString(request);
+            string dbData = client.GetStringAsync(request).Result;
 
             Charm charm = JsonConvert.DeserializeObject<Charm>(dbData);
             return charm;
@@ -47,8 +46,7 @@ namespace MHW_Net
         {
             string request = $"https://mhw-db.com/decorations/{id}";
 
-            var wc = new WebClient();
-            string dbData = wc.DownloadString(request);
+            string dbData = client.GetStringAsync(request).Result;
 
             Decoration decoration = JsonConvert.DeserializeObject<Decoration>(dbData);
             return decoration;
@@ -58,8 +56,7 @@ namespace MHW_Net
         {
             string request = $"https://mhw-db.com/weapons/{id}";
 
-            var wc = new WebClient();
-            string dbData = wc.DownloadString(request);
+            string dbData = client.GetStringAsync(request).Result;
 
             Weapon weapon = JsonConvert.DeserializeObject<Weapon>(dbData);
             return weapon;
@@ -69,8 +66,7 @@ namespace MHW_Net
         {
             string request = $"https://mhw-db.com/items/{id}";
 
-            var wc = new WebClient();
-            string dbData = wc.DownloadString(request);
+            string dbData = client.GetStringAsync(request).Result;
 
             Item item = JsonConvert.DeserializeObject<Item>(dbData);
             return item;
@@ -89,8 +85,7 @@ namespace MHW_Net
 
             string request = $"https://mhw-db.com/{dict.First(s => s.Key == typeof(T)).Value}/{id}";
 
-            var wc = new WebClient();
-            string dbData = wc.DownloadString(request);
+            string dbData = client.GetStringAsync(request).Result;
 
             var value = JsonConvert.DeserializeObject<T>(dbData);
             return value;
