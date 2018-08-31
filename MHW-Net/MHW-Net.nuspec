@@ -6,8 +6,8 @@
     <title>MHW-Net</title>
     <authors>Jooty</authors>
     <owners>Jooty</owners>
-    <licenseUrl>https://github.com/Jooty</licenseUrl>
-    <projectUrl>https://github.com/Jooty</projectUrl>
+    <licenseUrl>https://github.com/Jooty/MHW.Net/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Jooty/MHW.Net</projectUrl>
     <iconUrl>https://vignette.wikia.nocookie.net/monsterhunter/images/d/dc/MHW-Black_Diablos_Icon.png/revision/latest?cb=20180128062821</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A C# library to parse the data from https://mhw-db.com</description>
