@@ -18,6 +18,13 @@ namespace MHW_Net
 
             string dbData = client.GetStringAsync(request).Result;
 
+            if (dbData.Contains("error"))
+            {
+                var error = JsonConvert.DeserializeObject<Error>(dbData);
+
+                throw new ArgumentException(error.message, "id");
+            }
+
             Armor armor = JsonConvert.DeserializeObject<Armor>(dbData);
             return armor;
         }
@@ -27,6 +34,13 @@ namespace MHW_Net
             string request = $"https://mhw-db.com/armor/sets/{id}";
 
             string dbData = client.GetStringAsync(request).Result;
+
+            if (dbData.Contains("error"))
+            {
+                var error = JsonConvert.DeserializeObject<Error>(dbData);
+
+                throw new ArgumentException(error.message, "id");
+            }
 
             ArmorSet armorSet = JsonConvert.DeserializeObject<ArmorSet>(dbData);
             return armorSet;
@@ -38,6 +52,13 @@ namespace MHW_Net
 
             string dbData = client.GetStringAsync(request).Result;
 
+            if (dbData.Contains("error"))
+            {
+                var error = JsonConvert.DeserializeObject<Error>(dbData);
+
+                throw new ArgumentException(error.message, "id");
+            }
+
             Charm charm = JsonConvert.DeserializeObject<Charm>(dbData);
             return charm;
         }
@@ -47,6 +68,13 @@ namespace MHW_Net
             string request = $"https://mhw-db.com/decorations/{id}";
 
             string dbData = client.GetStringAsync(request).Result;
+
+            if (dbData.Contains("error"))
+            {
+                var error = JsonConvert.DeserializeObject<Error>(dbData);
+
+                throw new ArgumentException(error.message, "id");
+            }
 
             Decoration decoration = JsonConvert.DeserializeObject<Decoration>(dbData);
             return decoration;
@@ -58,6 +86,13 @@ namespace MHW_Net
 
             string dbData = client.GetStringAsync(request).Result;
 
+            if (dbData.Contains("error"))
+            {
+                var error = JsonConvert.DeserializeObject<Error>(dbData);
+
+                throw new ArgumentException(error.message, "id");
+            }
+
             Weapon weapon = JsonConvert.DeserializeObject<Weapon>(dbData);
             return weapon;
         }
@@ -67,6 +102,13 @@ namespace MHW_Net
             string request = $"https://mhw-db.com/items/{id}";
 
             string dbData = client.GetStringAsync(request).Result;
+
+            if (dbData.Contains("error"))
+            {
+                var error = JsonConvert.DeserializeObject<Error>(dbData);
+
+                throw new ArgumentException(error.message, "id");
+            }
 
             Item item = JsonConvert.DeserializeObject<Item>(dbData);
             return item;
@@ -86,6 +128,13 @@ namespace MHW_Net
             string request = $"https://mhw-db.com/{dict.First(s => s.Key == typeof(T)).Value}/{id}";
 
             string dbData = client.GetStringAsync(request).Result;
+
+            if (dbData.Contains("error"))
+            {
+                var error = JsonConvert.DeserializeObject<Error>(dbData);
+
+                throw new ArgumentException(error.message, "id");
+            }
 
             var value = JsonConvert.DeserializeObject<T>(dbData);
             return value;

@@ -79,6 +79,7 @@
     <Compile Include="Objects\CraftingCost.cs" />
     <Compile Include="Objects\Decoration.cs" />
     <Compile Include="Objects\ElementType.cs" />
+    <Compile Include="Objects\Error.cs" />
     <Compile Include="Objects\Item.cs" />
     <Compile Include="Objects\RequiredMaterial.cs" />
     <Compile Include="Objects\SetInfo.cs" />
