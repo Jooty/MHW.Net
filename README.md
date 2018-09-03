@@ -4,7 +4,7 @@ A C# library to parse the data from https://mhw-db.com
 ## Get it through Nuget:
 https://www.nuget.org/packages/MHW.Net/
 
-`> Install-Package MHW.Net -Version 0.1.0`
+`> Install-Package MHW.Net -Version 0.1.1`
 
 ## Supports:
 - Decorations
